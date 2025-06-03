@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Современный веб-сайт</title>
+    <title>Кофейня "Уютный уголок"</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav">
-            <div class="logo">Логотип</div>
+            <div class="logo">
+                <i class="fas fa-coffee"></i>
+                Уютный уголок
+            </div>
             <ul class="nav-list">
                 <li><a href="#home">Главная</a></li>
+                <li><a href="#menu">Меню</a></li>
                 <li><a href="#about">О нас</a></li>
-                <li><a href="#services">Услуги</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
         </nav>
@@ -21,64 +25,101 @@
 
     <main>
         <section id="home" class="hero">
-            <h1>Добро пожаловать</h1>
-            <p>Создаем современные веб-решения</p>
+            <h1>Добро пожаловать в "Уютный уголок"</h1>
+            <p>Лучший кофе в городе</p>
+            <a href="#menu" class="cta-button">Смотреть меню</a>
         </section>
 
-        <section id="about" class="about">
-            <h2>О нас</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <h3>Наша миссия</h3>
-                    <p>Мы стремимся создавать качественные веб-решения</p>
+        <section id="menu" class="menu">
+            <h2>Наше меню</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Эспрессо">
+                    <h3>Эспрессо</h3>
+                    <p>Крепкий и насыщенный вкус</p>
+                    <span class="price">150 ₽</span>
                 </div>
-                <div class="about-card">
-                    <h3>Наши ценности</h3>
-                    <p>Качество, надежность и инновации</p>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d" alt="Капучино">
+                    <h3>Капучино</h3>
+                    <p>Идеальный баланс кофе и молока</p>
+                    <span class="price">200 ₽</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1579888944880-d98341245702" alt="Латте">
+                    <h3>Латте</h3>
+                    <p>Нежный вкус с молочной пенкой</p>
+                    <span class="price">220 ₽</span>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="services">
-            <h2>Наши услуги</h2>
-            <div class="services-flex">
-                <div class="service-item">
-                    <h3>Веб-разработка</h3>
-                    <p>Создание современных веб-сайтов</p>
+        <section id="about" class="about">
+            <h2>О нашей кофейне</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-coffee"></i>
+                    <h3>Лучшие зерна</h3>
+                    <p>Мы используем только отборные зерна арабики из разных стран мира</p>
                 </div>
-                <div class="service-item">
-                    <h3>Дизайн</h3>
-                    <p>Уникальный визуальный стиль</p>
+                <div class="about-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Работаем с 8:00</h3>
+                    <p>Начинайте свой день с чашечки ароматного кофе</p>
                 </div>
-                <div class="service-item">
-                    <h3>Оптимизация</h3>
-                    <p>Повышение производительности</p>
+                <div class="about-card">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Бесплатный Wi-Fi</h3>
+                    <p>Удобное место для работы и отдыха</p>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
             <h2>Свяжитесь с нами</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Имя:</label>
-                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>ул. Кофейная, 1</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+7 (999) 123-45-67</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@coffee-shop.ru</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required placeholder="Введите ваш email">
-                </div>
-                <div class="form-group">
-                    <label for="message">Сообщение:</label>
-                    <textarea id="message" name="message" required placeholder="Введите ваше сообщение"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Отправить</button>
-            </form>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="Введите ваш email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение:</label>
+                        <textarea id="message" name="message" required placeholder="Введите ваше сообщение"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Все права защищены</p>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+            </div>
+            <p>&copy; 2024 Кофейня "Уютный уголок". Все права защищены</p>
+        </div>
     </footer>
 </body>
 </html> 
