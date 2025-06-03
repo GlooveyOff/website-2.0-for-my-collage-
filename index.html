@@ -3,123 +3,383 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кофейня "Уютный уголок"</title>
+    <title>BikeZone - Велосипедный магазин</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">
-                <i class="fas fa-coffee"></i>
-                Уютный уголок
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +7 (999) 123-45-67</span>
+                <span><i class="fas fa-envelope"></i> info@bikezone.ru</span>
             </div>
-            <ul class="nav-list">
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#menu">Меню</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
-        </nav>
+            <div class="social-links">
+                <a href="https://vk.com/glooveyoff" target="_blank"><i class="fab fa-vk"></i></a>
+                <a href="https://t.me/gloovey" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-bicycle"></i>
+                <span>BikeZone</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#catalog">Каталог</a></li>
+                    <li><a href="#brands">Бренды</a></li>
+                    <li><a href="#services">Сервис</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <h1>Добро пожаловать в "Уютный уголок"</h1>
-            <p>Лучший кофе в городе</p>
-            <a href="#menu" class="cta-button">Смотреть меню</a>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Откройте мир велосипедов</h1>
+                <p>Широкий выбор велосипедов и аксессуаров для активного образа жизни</p>
+                <div class="hero-buttons">
+                    <a href="#catalog" class="btn btn-primary">Каталог</a>
+                    <a href="#services" class="btn btn-secondary">Сервис</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e" alt="Велосипед">
+            </div>
         </section>
 
-        <section id="menu" class="menu">
-            <h2>Наше меню</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Эспрессо">
-                    <h3>Эспрессо</h3>
-                    <p>Крепкий и насыщенный вкус</p>
-                    <span class="price">150 ₽</span>
+        <section id="catalog" class="catalog">
+            <div class="container">
+                <h2>Каталог товаров</h2>
+                <div class="catalog-filters">
+                    <div class="filter-group">
+                        <label>Категория:</label>
+                        <select id="category-filter">
+                            <option value="all">Все</option>
+                            <option value="mountain">Горные велосипеды</option>
+                            <option value="road">Шоссейные велосипеды</option>
+                            <option value="accessories">Аксессуары</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Цена:</label>
+                        <select id="price-filter">
+                            <option value="all">Все</option>
+                            <option value="0-20000">До 20 000 ₽</option>
+                            <option value="20000-50000">20 000 - 50 000 ₽</option>
+                            <option value="50000+">Более 50 000 ₽</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Сортировка:</label>
+                        <select id="sort-filter">
+                            <option value="popular">По популярности</option>
+                            <option value="price-asc">По возрастанию цены</option>
+                            <option value="price-desc">По убыванию цены</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d" alt="Капучино">
-                    <h3>Капучино</h3>
-                    <p>Идеальный баланс кофе и молока</p>
-                    <span class="price">200 ₽</span>
+                <div class="catalog-grid">
+                    <!-- Товары будут добавлены через JavaScript -->
                 </div>
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1579888944880-d98341245702" alt="Латте">
-                    <h3>Латте</h3>
-                    <p>Нежный вкус с молочной пенкой</p>
-                    <span class="price">220 ₽</span>
+                <div class="pagination">
+                    <button class="pagination-btn prev" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="pagination-numbers">
+                        <!-- Номера страниц будут добавлены через JavaScript -->
+                    </div>
+                    <button class="pagination-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="categories" class="categories">
+            <div class="container">
+                <h2>Категории</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8" alt="Горные велосипеды">
+                        <h3>Горные велосипеды</h3>
+                        <a href="#" class="category-link">Подробнее</a>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1511994298241-608e28f14fde" alt="Шоссейные велосипеды">
+                        <h3>Шоссейные велосипеды</h3>
+                        <a href="#" class="category-link">Подробнее</a>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91" alt="Аксессуары">
+                        <h3>Аксессуары</h3>
+                        <a href="#" class="category-link">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-tools"></i>
+                        <h3>Профессиональный сервис</h3>
+                        <p>Ремонт и обслуживание велосипедов любой сложности</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-truck"></i>
+                        <h3>Быстрая доставка</h3>
+                        <p>Доставляем по всей России</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Гарантия качества</h3>
+                        <p>Официальная гарантия на все товары</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-headset"></i>
+                        <h3>Поддержка 24/7</h3>
+                        <p>Всегда на связи с нашими клиентами</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="brands" class="brands">
+            <div class="container">
+                <h2>Наши бренды</h2>
+                <div class="brands-grid">
+                    <div class="brand-card">
+                        <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8" alt="Trek">
+                        <h3>Trek</h3>
+                        <p>Американский производитель велосипедов премиум-класса</p>
+                    </div>
+                    <div class="brand-card">
+                        <img src="https://images.unsplash.com/photo-1511994298241-608e28f14fde" alt="Specialized">
+                        <h3>Specialized</h3>
+                        <p>Инновационные решения в мире велосипедов</p>
+                    </div>
+                    <div class="brand-card">
+                        <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e" alt="Giant">
+                        <h3>Giant</h3>
+                        <p>Крупнейший производитель велосипедов в мире</p>
+                    </div>
+                    <div class="brand-card">
+                        <img src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91" alt="Cannondale">
+                        <h3>Cannondale</h3>
+                        <p>Передовые технологии и уникальный дизайн</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Наши услуги</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>Ремонт и обслуживание</h3>
+                        <p>Профессиональный ремонт велосипедов любой сложности</p>
+                        <ul>
+                            <li>Диагностика</li>
+                            <li>Настройка переключателей</li>
+                            <li>Замена компонентов</li>
+                            <li>Обслуживание тормозов</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Записаться</a>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-bicycle"></i>
+                        <h3>Тест-драйв</h3>
+                        <p>Возможность протестировать велосипед перед покупкой</p>
+                        <ul>
+                            <li>30 минут бесплатно</li>
+                            <li>Профессиональная консультация</li>
+                            <li>Безопасная территория</li>
+                            <li>Все модели в наличии</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Записаться</a>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Обучение</h3>
+                        <p>Курсы по обслуживанию и ремонту велосипедов</p>
+                        <ul>
+                            <li>Базовый курс</li>
+                            <li>Продвинутый уровень</li>
+                            <li>Практические занятия</li>
+                            <li>Сертификат по окончании</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Записаться</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="about" class="about">
-            <h2>О нашей кофейне</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <i class="fas fa-coffee"></i>
-                    <h3>Лучшие зерна</h3>
-                    <p>Мы используем только отборные зерна арабики из разных стран мира</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Работаем с 8:00</h3>
-                    <p>Начинайте свой день с чашечки ароматного кофе</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-wifi"></i>
-                    <h3>Бесплатный Wi-Fi</h3>
-                    <p>Удобное место для работы и отдыха</p>
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h2>О нас</h2>
+                        <p>BikeZone - это не просто магазин велосипедов, это место, где рождается любовь к велоспорту. Мы работаем с 2010 года и за это время помогли тысячам людей найти их идеальный велосипед.</p>
+                        <div class="about-features">
+                            <div class="feature">
+                                <i class="fas fa-medal"></i>
+                                <div>
+                                    <h3>13 лет опыта</h3>
+                                    <p>Работаем с 2010 года</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <h3>10,000+ клиентов</h3>
+                                    <p>Довольных покупателей</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-store"></i>
+                                <div>
+                                    <h3>3 магазина</h3>
+                                    <p>В разных районах города</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e" alt="Наш магазин">
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
-            <h2>Свяжитесь с нами</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>ул. Кофейная, 1</p>
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Свяжитесь с нами</h2>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Адрес</h3>
+                                <p>ул. Велосипедная, 1</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Режим работы</h3>
+                                <p>Пн-Вс: 9:00 - 21:00</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Телефон</h3>
+                                <p>+7 (999) 123-45-67</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+7 (999) 123-45-67</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>info@coffee-shop.ru</p>
-                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder="Ваше имя">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder="Ваш email">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required placeholder="Ваше сообщение"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Имя:</label>
-                        <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required placeholder="Введите ваш email">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Сообщение:</label>
-                        <textarea id="message" name="message" required placeholder="Введите ваше сообщение"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Отправить</button>
-                </form>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-vk"></i></a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>BikeZone</h3>
+                    <p>Ваш надежный партнер в мире велосипедов</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="#catalog">Каталог</a></li>
+                        <li><a href="#brands">Бренды</a></li>
+                        <li><a href="#services">Сервис</a></li>
+                        <li><a href="#about">О нас</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@bikezone.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> ул. Велосипедная, 1</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Подпишитесь на новости</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Ваш email">
+                        <button type="submit" class="btn btn-primary">Подписаться</button>
+                    </form>
+                </div>
             </div>
-            <p>&copy; 2024 Кофейня "Уютный уголок". Все права защищены</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BikeZone. Все права защищены</p>
+            </div>
         </div>
     </footer>
+
+    <div class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Корзина</h2>
+                <button class="close-cart">&times;</button>
+            </div>
+            <div class="cart-items">
+                <!-- Здесь будут элементы корзины -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    Итого: <span>0 ₽</span>
+                </div>
+                <button class="checkout-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="search-modal">
+        <div class="search-content">
+            <button class="close-search">&times;</button>
+            <input type="text" placeholder="Поиск велосипедов и аксессуаров...">
+        </div>
+    </div>
+
+    <div class="notification">
+        Товар добавлен в корзину!
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html> 
